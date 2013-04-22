@@ -103,14 +103,13 @@ function my_add_specs_table_row() {
 * Added ability to insert custom rows into specs table
 * Fixed minor WP notice that appeared if modified date had not been set yet.
 
-
-= 0.3: April 15, 2013 = 
+= 0.3 = 
 * Fixed compatibility issue with the cmb_Meta_Box class
 
-= 0.2: April 9, 2013 =
+= 0.2 =
 
 * Added compatibility with EDD Versions plugin.
 
-= 0.1: April 9, 2013 =
+= 0.1 =
 
 * Initial release.

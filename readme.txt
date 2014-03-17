@@ -1,12 +1,10 @@
 ﻿=== Easy Digital Downloads - Software Specs ===
-Author URI: http://isabelcastillo.com
-Plugin URI: http://wordpress.org/plugins/easy-digital-downloads-software-specs/
 Contributors: isabel104
-Donate link: http://isabelcastillo.com/donate/
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=me%40isabelcastillo%2ecom
 Tags: software, specs, SoftwareApplication, application, microdata, schema, schema.org, easy digital downloads, edd specs
-Requires at least: 3.3
-Tested up to: 3.8
-Stable Tag: 1.6
+Requires at least: 3.6
+Tested up to: 3.9
+Stable Tag: 1.6.1
 License: GNU Version 2 or Any Later Version
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -40,8 +38,8 @@ This is an extension for [Easy Digital Downloads](http://wordpress.org/plugins/e
   * Currency code
 
  You can leave a field blank to omit that row from the table. There are 2 exceptions to this. 
-    * 1.  The `Last updated date` field, since leaving that field blank will disable the entire table.
-    * 2.  The `Version` field. This plugin is compatible with **EDD Software Licensing plugin** and with **EDD Changelog Plugin**. If EDD Software Licensing plugin is present, and you have enabled it for a download, that version will override this version in the Specs table on the downloads page. In that case, if you leave the Specs version field blank, the Specs table on the site will still show the version from EDD Software Licensing. So, EDD Software Specs plugin gives priority to the version entered in **EDD Software Licensing plugin**, then **EDD Changelog Plugin**, in that order.
+1.  The `Last updated date` field, since leaving that field blank will disable the entire table.
+2.  The `Version` field. This plugin is compatible with **EDD Software Licensing plugin** and with **EDD Changelog Plugin**. If EDD Software Licensing plugin is present, and you have enabled it for a download, that version will override this version in the Specs table on the downloads page. In that case, if you leave the Specs version field blank, the Specs table on the site will still show the version from EDD Software Licensing. So, EDD Software Specs plugin gives priority to the version entered in **EDD Software Licensing plugin**, then **EDD Changelog Plugin**, in that order.
 
  In addition to leaving fields blank, you can add code to add more rows to the table (see FAQs).
 
@@ -69,7 +67,7 @@ requirements`
 * It lets you enable the Specs table only for downloads that need it. See FAQ for details.
 
 
-For more info, [see the FAQ](http://wordpress.org/plugins/easy-digital-downloads-software-specs/faq/), and the [Installation Instructions](http://wordpress.org/plugins/easy-digital-downloads-software-specs/installation/). Or see the [plugin's web page](http://isabelcastillo.com/downloads/easy-digital-downloads-software-specs-plugin), or [GitHub](https://github.com/isabelc/edd-software-specs).
+For more info, [see the FAQ](http://wordpress.org/plugins/easy-digital-downloads-software-specs/faq/), and the [Installation Instructions](http://wordpress.org/plugins/easy-digital-downloads-software-specs/installation/). Or see the [plugin's web page](http://isabelcastillo.com/docs/category/easy-digital-downloads-software-specs-plugin), or [GitHub](https://github.com/isabelc/edd-software-specs).
 
 
 
@@ -132,7 +130,7 @@ add_action ( 'eddss_add_specs_table_row', 'my_add_specs_table_row');
 
 `
 
-For example, say you added a custom meta field to the downloads, and you want to show this custom meta the Specs table. Say your custom field is 'my_license'. Then you add this to your functions:
+For example, say you added a custom meta field to the downloads, and you want to show this custom meta in the Specs table. Say your custom field is 'my_license'. Then you add this to your functions:
 
 `
 /**
@@ -155,8 +153,7 @@ add_action ( 'eddss_add_specs_table_row', 'my_add_specs_table_row');
 
 = How can I give back? =
 
-[Please rate the plugin, Tweet about it, share it on Facebook](http://isabelcastillo.com/donate/), etc. Thank you.
-You can also follow me on your favorite social network: [Twitter](https://twitter.com/isabelphp), [Facebook](https://www.facebook.com/isabel.8991), [Google Plus](https://plus.google.com/111025990685359974539/posts)
+Please [rate the plugin](http://wordpress.org/support/view/plugin-reviews/easy-digital-downloads-software-specs). Thank you.
 
 
 == Screenshots ==
@@ -164,6 +161,11 @@ You can also follow me on your favorite social network: [Twitter](https://twitte
 1. Front-end: Specs table as shown on single download page
 2. Back-end: Specs meta box on single download editor
 == Changelog ==
+
+= 1.6.1 =
+* Fix: specs content filter should ignore widget setting to surpress specs if the widget is not active
+* Maintenance: Updated rate link and plugin URI.
+* Maintenance: Tested and passed for WP 3.9 compatibility.
 
 = 1.6 =
 * Bug fix: shortcode now works on any page or post for a download.

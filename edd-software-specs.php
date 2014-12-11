@@ -3,7 +3,7 @@
 Plugin Name: Easy Digital Downloads - Software Specs
 Plugin URI: http://isabelcastillo.com/docs/category/easy-digital-downloads-software-specs-plugin
 Description: Add software specs and Software Application Microdata to your downloads when using Easy Digital Downloads plugin.
-Version: 1.7
+Version: 1.7.1
 Author: Isabel Castillo
 Author URI: http://isabelcastillo.com
 License: GPL2
@@ -92,6 +92,10 @@ class EDD_Software_Specs{
 	public function softwareapp_body_class( $classes ) {
 
 		global $post;
+		if ( ! is_object($post) ) {
+			return;
+		}
+
 		$dm = get_post_meta($post->ID, '_smartest_lastupdate', true);
 		// only do the following if last updated date is entered
 		if($dm) {
@@ -393,13 +397,15 @@ class EDD_Software_Specs{
 	 */
 
 	public function remove_microdata() {
-		// only if specs are wanted
 		global $post;
+		if ( ! is_object($post) ) {
+			return;
+		}		
 		$dm = get_post_meta($post->ID, '_smartest_lastupdate', true);
 
-		if($dm) {
-				/* remove EDD's itemtype product, will do SoftwareApplication instead, up at the body element */
-				remove_filter( 'the_content', 'edd_microdata_wrapper', 10 );
+		if( $dm ) {
+			/* remove EDD's itemtype product, will do SoftwareApplication instead, up at the body element */
+			remove_filter( 'the_content', 'edd_microdata_wrapper', 10 );
 		}
 	}
 
@@ -465,4 +471,4 @@ class EDD_Software_Specs{
 }
 }
 $EDD_Software_Specs = EDD_Software_Specs::get_instance();
-add_shortcode( 'edd-software-specs', array( 'EDD_Software_Specs', 'edd_software_specs_shortcode' ) );
+add_shortcode( 'edd-software-specs', array( $EDD_Software_Specs, 'edd_software_specs_shortcode' ) );
